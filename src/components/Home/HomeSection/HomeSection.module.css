@@ -1,0 +1,37 @@
+.home_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f41d1;
+  padding: 100px 0 80px;
+}
+
+.homepage_homesection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.homepage_homesection_left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+}
+
+.homepage_homesection_left h1 {
+  font-size: 50px;
+  line-height: 82px;
+}
+
+.homepage_homesection_left p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 28px;
+}
+
+.homepage_homesection_right {
+  margin-right: -350px;
+}

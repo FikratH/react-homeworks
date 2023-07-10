@@ -1,0 +1,27 @@
+.header {
+  background-color: #365ae1;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.app_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app_header_right_list {
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.app_header_right_list_item {
+  padding: 20px 0;
+}
+
+.app_header_right_list_item a {
+  text-decoration: none;
+  color: white;
+}
