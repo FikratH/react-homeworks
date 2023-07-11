@@ -17,7 +17,7 @@ export const ROUTES = [
     ],
   },
   {
-    path: "/",
+    path: "/admin",
     element: <AdminRoot />,
     children: [
       {
