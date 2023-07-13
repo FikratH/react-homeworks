@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ROUTES } from "./routes/route";
+import MainContext from "./contexts/MainContext";
+import { useState } from "react";
+
+const router = createBrowserRouter(ROUTES);
 
 function App() {
+  const [search, setSearch] = useState("");
+  const [filterValue, setFilterValue] = useState("");
+
+  const data = { search, setSearch, filterValue, setFilterValue };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContext.Provider value={data}>
+      <RouterProvider router={router} />
+    </MainContext.Provider>
   );
 }
 

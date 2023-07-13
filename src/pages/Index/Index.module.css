@@ -1,0 +1,25 @@
+.app_index_body {
+  background-color: #fafafa;
+  width: 100%;
+}
+
+.app_index_body_container {
+  padding-top: 55px;
+  padding-bottom: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+
+.app_index_body_search_bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app_index_body_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 60px;
+  align-items: center;
+  justify-items: center;
+}
