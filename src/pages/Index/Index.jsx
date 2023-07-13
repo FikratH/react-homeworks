@@ -9,6 +9,7 @@ import MainContext from "../../contexts/MainContext";
 import isNullOrWhitespace from "../../utils/functions/isNullOrWhiteSpace";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Tag } from "antd";
+import { Helmet } from "react-helmet";
 
 const antIcon = (
   <LoadingOutlined
@@ -40,54 +41,59 @@ const Index = () => {
   }, []);
 
   return (
-    <div className={styles.app_index_body}>
-      <div className={`${styles.app_index_body_container} container`}>
-        <div className={styles.app_index_body_search_bar}>
-          <SearchInput />
-          <SelectComponent />
-        </div>
-        <div className={styles.app_index_body_cards}>
-          {isLoading ? (
-            <Spin indicator={antIcon} />
-          ) : (
-            data.map((country, index) => {
-              if (isNullOrWhitespace(search)) {
-                if (country.region.toLowerCase().includes(filterValue)) {
-                  return (
-                    <CountryCard
-                      key={index}
-                      name={country.name.common}
-                      image={country.flags.png}
-                      population={country.population}
-                      region={country.region}
-                      capital={country.capital[0]}
-                    />
-                  );
+    <>
+      <Helmet>
+        <title>Countries</title>
+      </Helmet>
+      <div className={styles.app_index_body}>
+        <div className={`${styles.app_index_body_container} container`}>
+          <div className={styles.app_index_body_search_bar}>
+            <SearchInput />
+            <SelectComponent />
+          </div>
+          <div className={styles.app_index_body_cards}>
+            {isLoading ? (
+              <Spin indicator={antIcon} />
+            ) : (
+              data.map((country, index) => {
+                if (isNullOrWhitespace(search)) {
+                  if (country.region.toLowerCase().includes(filterValue)) {
+                    return (
+                      <CountryCard
+                        key={index}
+                        name={country.name.common}
+                        image={country.flags.png}
+                        population={country.population}
+                        region={country.region}
+                        capital={country.capital[0]}
+                      />
+                    );
+                  }
+                } else {
+                  if (
+                    country.name.common
+                      .toUpperCase()
+                      .includes(search.toUpperCase()) &&
+                    country.region.toLowerCase().includes(filterValue)
+                  ) {
+                    return (
+                      <CountryCard
+                        key={index}
+                        name={country.name.common}
+                        image={country.flags.png}
+                        population={country.population}
+                        region={country.region}
+                        capital={country.capital[0]}
+                      />
+                    );
+                  }
                 }
-              } else {
-                if (
-                  country.name.common
-                    .toUpperCase()
-                    .includes(search.toUpperCase()) &&
-                  country.region.toLowerCase().includes(filterValue)
-                ) {
-                  return (
-                    <CountryCard
-                      key={index}
-                      name={country.name.common}
-                      image={country.flags.png}
-                      population={country.population}
-                      region={country.region}
-                      capital={country.capital[0]}
-                    />
-                  );
-                }
-              }
-            })
-          )}
+              })
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
