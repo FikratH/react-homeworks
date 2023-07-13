@@ -79,3 +79,11 @@
   gap: 15px;
   margin-top: 56px;
 }
+
+.no_borders {
+  color: #111517;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+}

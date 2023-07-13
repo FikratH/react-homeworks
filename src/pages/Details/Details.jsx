@@ -143,9 +143,15 @@ const Details = () => {
                 >
                   Border Countries:
                   <span>
-                    {country.borders.map((border, index) => {
-                      return <Tag key={index}>{border}</Tag>;
-                    })}
+                    {typeof country.borders != "undefined" ? (
+                      country.borders.map((border, index) => {
+                        return <Tag key={index}>{border}</Tag>;
+                      })
+                    ) : (
+                      <span className={styles.no_borders}>
+                        No border countries
+                      </span>
+                    )}
                   </span>
                 </span>
               </div>
