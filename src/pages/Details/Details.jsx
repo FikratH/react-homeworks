@@ -121,9 +121,13 @@ const Details = () => {
                     }
                   >
                     <b>Currencies:</b>{" "}
-                    {Object.entries(country.currencies).map((currency) => {
-                      return `${currency[1].name}, `;
-                    })}
+                    {Object.entries(country.currencies).map(
+                      (currency, index, array) => {
+                        return `${currency[1].name}${
+                          index === array.length - 1 ? "." : ", "
+                        } `;
+                      }
+                    )}
                   </li>
                   <li
                     className={
@@ -131,9 +135,13 @@ const Details = () => {
                     }
                   >
                     <b>Languages:</b>
-                    {Object.entries(country.languages).map((language) => {
-                      return `${language[1]}, `;
-                    })}
+                    {Object.entries(country.languages).map(
+                      (language, index, array) => {
+                        return `${language[1]}${
+                          index === array.length - 1 ? "." : ", "
+                        }`;
+                      }
+                    )}
                   </li>
                 </ul>
               </div>

@@ -3,9 +3,15 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
+  text-decoration: none;
+}
+
+.card_description p {
+  text-decoration: none;
 }
 
 .card_description_btn {
   align-self: start;
   margin-top: 10px;
+  text-decoration: none;
 }
