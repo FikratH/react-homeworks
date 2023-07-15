@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "./Header.module.css";
 import Darkmode from "darkmode-js";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const darkMode = new Darkmode();
   return (
     <header className={`${styles.app_header}`}>
       <div className={`${styles.app_header_container} container`}>
-        <p className={styles.app_header_logo}>Where in the world?</p>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <p className={styles.app_header_logo}>Where in the world?</p>
+        </Link>
         <div
           className={styles.app_header_darkmode_btn}
           onClick={() => {

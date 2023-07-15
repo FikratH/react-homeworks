@@ -1,9 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "./SearchInput.module.css";
 import MainContext from "../../contexts/MainContext";
 
 const SearchInput = ({ placeholder }) => {
-  const { setSearch } = useContext(MainContext);
+  const { search, setSearch } = useContext(MainContext);
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.value = search;
+  }, []);
 
   return (
     <div className={styles.input_div}>
@@ -22,11 +27,11 @@ const SearchInput = ({ placeholder }) => {
         />
       </svg>
       <input
+        ref={inputRef}
         type="text"
         placeholder={placeholder}
         onChange={(e) => {
           setSearch(e.target.value);
-          console.log(e.target.value);
         }}
       />
     </div>

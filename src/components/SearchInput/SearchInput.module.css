@@ -13,3 +13,9 @@
   outline: none;
   width: 380px;
 }
+
+@media (max-width: 576px) {
+  .input_div input {
+    width: 240px;
+  }
+}

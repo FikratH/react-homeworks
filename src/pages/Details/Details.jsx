@@ -163,7 +163,11 @@ const Details = () => {
                     <span>
                       {typeof country.borders != "undefined" ? (
                         country.borders.map((border, index) => {
-                          return <Tag key={index}>{border}</Tag>;
+                          return (
+                            <Tag className={styles.tag} key={index}>
+                              {border}
+                            </Tag>
+                          );
                         })
                       ) : (
                         <span className={styles.no_borders}>

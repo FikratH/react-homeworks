@@ -9,3 +9,26 @@
   align-self: start;
   margin-top: 10px;
 }
+
+.card {
+  width: 264px;
+}
+
+.image {
+  height: 150px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 400px;
+  }
+  .image {
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 300px;
+  }
+}

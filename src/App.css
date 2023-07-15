@@ -14,3 +14,15 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 55px 40px 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 25px 15px 15px;
+  }
+}
